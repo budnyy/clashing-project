@@ -1,28 +1,23 @@
-package com.example.demo.card;
+package com.example.demo;
 
+import com.example.demo.card.CardResponse;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 
-@Controller
-@RequestMapping("/clashing")
-public class CardController {
+@Component
+public class ExternalApiClient {
 
     @Value("${API_TOKEN}")
     private String apiToken;
 
     RestClient restClient = RestClient.builder().build();
 
-    @GetMapping("/cards")
-    @ResponseBody
-    public CardResponse getCards() {
-
+    public CardResponse getCards(){
         return restClient.get()
                 .uri("https://api.clashroyale.com/v1/cards")
                 .header("Authorization", apiToken)
                 .retrieve().body(CardResponse.class);
     }
+
 }

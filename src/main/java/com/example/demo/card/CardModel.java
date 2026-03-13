@@ -1,6 +1,8 @@
 package com.example.demo.card;
 
-public class CardModel {
+import java.io.Serializable;
+
+public class CardModel implements Serializable {
 
     private String name;
     private Long id;

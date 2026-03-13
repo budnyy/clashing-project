@@ -9,8 +9,6 @@ public class CachingprojectApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CachingprojectApplication.class, args);
 
-		ConnectBasicTest test = new ConnectBasicTest();
-		test.connectBasic();
 	}
 
 }

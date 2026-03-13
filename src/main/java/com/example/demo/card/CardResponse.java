@@ -1,8 +1,9 @@
 package com.example.demo.card;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class CardResponse {
+public class CardResponse implements Serializable {
 
     private List<CardModel> items;
 
