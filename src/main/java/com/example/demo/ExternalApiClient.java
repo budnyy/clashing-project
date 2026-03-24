@@ -13,6 +13,7 @@ public class ExternalApiClient {
 
     RestClient restClient = RestClient.builder().build();
 
+    //change here to CardResponse type
     public CardResponse getCards(){
         return restClient.get()
                 .uri("https://api.clashroyale.com/v1/cards")
